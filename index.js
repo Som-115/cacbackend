@@ -6,6 +6,16 @@ require('dotenv').config()
 const express = require('express') // require module syntax
 const app = express()
 const port = 4000
+const githubdata = {
+  //my github data
+}
+
+// to print the github data whenever i go to /github on localhost
+app.get('/github', (req, res) =>{
+  console.log("we will get github data here")
+  res.json(githubdata) // sendind data in the form of json in response
+})
+// the above function will give github data in json format
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
